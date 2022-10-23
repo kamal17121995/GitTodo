@@ -11,7 +11,7 @@ removeButton.addEventListener('click', removeItem);
 
 
 function addItem() {
-    
+
     var input = document.getElementById('input');
     var item = input.value;
     ul = document.getElementById('list');
@@ -24,7 +24,7 @@ function addItem() {
         //create li
         var li = document.createElement('li');
 
-        
+
         //create checkbox
         var checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
@@ -36,13 +36,13 @@ function addItem() {
 
         //add this element on webpage
         //  document.querySelector('list').appendChild(ul);
-        
+
         var wrapperDiv = document.createElement("div");
         wrapperDiv.style.display = "flex";
         wrapperDiv.style.wordBreak = "break-word";
-        
+
         li.appendChild(wrapperDiv);
-        
+
         wrapperDiv.appendChild(label);
 
         wrapperDiv.appendChild(checkbox);
@@ -62,8 +62,8 @@ function addItem() {
 
 function removeItem() {
     li = ul.children
-    for (let index = 0; index < li.length; length++) {
-        while (li[index] && li[index].children[0].children[0].checked) {
+    for (let index = 0; index < li.length; index++) {
+        if (li[index] && li[index].children[0].children[0].checked) {
             ul.removeChild(li[index])
         }
 
